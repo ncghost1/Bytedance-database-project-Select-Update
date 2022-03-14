@@ -1,0 +1,179 @@
+Start testing: Mar 13 23:48 CST
+----------------------------------------------------------
+1/6 Testing: database_project_column_sum_test
+1/6 Test: database_project_column_sum_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/column_sum_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_column_sum_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from ColumnSumTest
+[ RUN      ] ColumnSumTest.TestRowTable
+[       OK ] ColumnSumTest.TestRowTable (2 ms)
+[ RUN      ] ColumnSumTest.TestColumnTable
+[       OK ] ColumnSumTest.TestColumnTable (1 ms)
+[ RUN      ] ColumnSumTest.TestIndexedTable
+[       OK ] ColumnSumTest.TestIndexedTable (1 ms)
+[----------] 3 tests from ColumnSumTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (6 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_column_sum_test" end time: Mar 13 23:48 CST
+"database_project_column_sum_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: database_project_custom_table_test
+2/6 Test: database_project_custom_table_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/custom_table_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_custom_table_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CustomTest
+[ RUN      ] CustomTest.TestRowTable
+[       OK ] CustomTest.TestRowTable (1 ms)
+[----------] 1 test from CustomTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_custom_table_test" end time: Mar 13 23:48 CST
+"database_project_custom_table_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: database_project_predicated_all_columns_sum_test
+3/6 Test: database_project_predicated_all_columns_sum_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/predicated_all_columns_sum_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_predicated_all_columns_sum_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PredicatedAllColumnsSumTest
+[ RUN      ] PredicatedAllColumnsSumTest.TestRowTable
+[       OK ] PredicatedAllColumnsSumTest.TestRowTable (1 ms)
+[ RUN      ] PredicatedAllColumnsSumTest.TestColumnTable
+[       OK ] PredicatedAllColumnsSumTest.TestColumnTable (1 ms)
+[ RUN      ] PredicatedAllColumnsSumTest.TestIndexedTable
+[       OK ] PredicatedAllColumnsSumTest.TestIndexedTable (1 ms)
+[----------] 3 tests from PredicatedAllColumnsSumTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_predicated_all_columns_sum_test" end time: Mar 13 23:48 CST
+"database_project_predicated_all_columns_sum_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: database_project_predicated_column_sum_test
+4/6 Test: database_project_predicated_column_sum_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/predicated_column_sum_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_predicated_column_sum_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PredicatedColumnSumTest
+[ RUN      ] PredicatedColumnSumTest.RowTableTest
+[       OK ] PredicatedColumnSumTest.RowTableTest (2 ms)
+[ RUN      ] PredicatedColumnSumTest.ColumnTableTest
+[       OK ] PredicatedColumnSumTest.ColumnTableTest (1 ms)
+[ RUN      ] PredicatedColumnSumTest.IndexedRowTableTest
+[       OK ] PredicatedColumnSumTest.IndexedRowTableTest (1 ms)
+[----------] 3 tests from PredicatedColumnSumTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (6 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_predicated_column_sum_test" end time: Mar 13 23:48 CST
+"database_project_predicated_column_sum_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: database_project_predicated_update_test
+5/6 Test: database_project_predicated_update_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/predicated_update_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_predicated_update_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PredicatedUpdateTest
+[ RUN      ] PredicatedUpdateTest.RowTableTest
+[       OK ] PredicatedUpdateTest.RowTableTest (2 ms)
+[ RUN      ] PredicatedUpdateTest.ColumnTableTest
+[       OK ] PredicatedUpdateTest.ColumnTableTest (2 ms)
+[ RUN      ] PredicatedUpdateTest.IndexedRowTableTest
+[       OK ] PredicatedUpdateTest.IndexedRowTableTest (2 ms)
+[----------] 3 tests from PredicatedUpdateTest (7 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (8 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_predicated_update_test" end time: Mar 13 23:48 CST
+"database_project_predicated_update_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: database_project_put_get_test
+6/6 Test: database_project_put_get_test
+Command: "/home/screamovo/Bytedance-database-project-main/build/test/lab2/put_get_test"
+Directory: /home/screamovo/Bytedance-database-project-main/build/test/lab2
+"database_project_put_get_test" start time: Mar 13 23:48 CST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/tmp_download/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PutGetTest
+[ RUN      ] PutGetTest.RowTableTest
+[       OK ] PutGetTest.RowTableTest (2 ms)
+[ RUN      ] PutGetTest.ColumnTableTest
+[       OK ] PutGetTest.ColumnTableTest (1 ms)
+[ RUN      ] PutGetTest.IndexedRowTableTest
+[       OK ] PutGetTest.IndexedRowTableTest (1 ms)
+[----------] 3 tests from PutGetTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (5 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Passed.
+"database_project_put_get_test" end time: Mar 13 23:48 CST
+"database_project_put_get_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 13 23:48 CST

@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -Werror -pthread -lm -fPIC -ggdb3 -Og -lunwind -fno-omit-frame-pointer -no-pie -fno-strict-aliasing   -rdynamic CMakeFiles/put_get_test.dir/put_get_test.cc.o  -o put_get_test  -Wl,-rpath,/home/screamovo/Bytedance-database-project-main/build/src /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a ../../src/libdatabase_project_lib.so 
