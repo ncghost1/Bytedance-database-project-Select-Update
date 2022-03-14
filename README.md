@@ -1,5 +1,4 @@
 # 【字学镜像计划 后端&大数据-中级】支持Select&Update操作及数据库索引
-实现了RowTable和ColumnTable的GetIntField()和PutIntField()以及ColumnSun()方法。<br>
 **注：运行sh configure.sh命令安装google test framework，若已安装先运行sh build.sh --clean --lab1 --lab2命令后运行cd build && ctest -VV -R "database_*" -j进行lab1和lab2test。**<br>
 This is a project based on stanford cs245.
 
