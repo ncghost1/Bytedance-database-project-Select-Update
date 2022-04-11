@@ -24,7 +24,7 @@ void ColumnTable::Load(BaseDataLoader *loader) {
   columns_ = new char[FIXED_FIELD_LEN * num_rows_ * num_cols_];
 
   for (int32_t row_id = 0; row_id < num_rows_; row_id++) {
-    auto cur_row = rows.at(row_id);
+    auto &cur_row = rows.at(row_id);
     for (int32_t col_id = 0; col_id < num_cols_; col_id++) {
       int32_t offset = FIXED_FIELD_LEN * ((col_id * num_rows_) + row_id);
       std::memcpy(columns_ + offset, cur_row + FIXED_FIELD_LEN * col_id,
