@@ -17,7 +17,7 @@ void RowTable::Load(BaseDataLoader *loader) {
   num_rows_ = rows.size();
   rows_ = new char[FIXED_FIELD_LEN * num_rows_ * num_cols_];
   for (auto row_id = 0; row_id < num_rows_; row_id++) {
-    auto cur_row = rows.at(row_id);
+    auto &cur_row = rows.at(row_id);
     std::memcpy(rows_ + row_id * (FIXED_FIELD_LEN * num_cols_), cur_row,
                 FIXED_FIELD_LEN * num_cols_);
   }
