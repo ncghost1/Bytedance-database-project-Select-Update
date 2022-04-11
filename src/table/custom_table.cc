@@ -14,10 +14,10 @@ void CustomTable::Load(BaseDataLoader *loader) {
     columns_ = new char[FIXED_FIELD_LEN * num_rows_ * num_cols_];
     index_.resize(num_cols_);
     for (int32_t row_id = 0; row_id < num_rows_; row_id++) {
-        auto cur_row = rows.at(row_id);
+        auto &cur_row = rows.at(row_id);
         for (int32_t col_id = 0; col_id < num_cols_; col_id++) {
 
-            //ÏÈÈ¡ÁĞÖµ£¬ÔÙ¼ÓÈë¸ÃÁĞµÄË÷Òı£¬×îºóĞ´Èëcolumns_
+            //å…ˆå–åˆ—å€¼ï¼Œå†åŠ å…¥è¯¥åˆ—çš„ç´¢å¼•ï¼Œæœ€åå†™å…¥columns_
             int32_t value = *(int32_t*)(cur_row + col_id * FIXED_FIELD_LEN);
             auto &cur_index = index_[col_id].index;
             cur_index[value].emplace_back(row_id);
@@ -31,13 +31,13 @@ void CustomTable::Load(BaseDataLoader *loader) {
 
 int32_t CustomTable::GetIntField(int32_t row_id, int32_t col_id) {
     // TODO: Implement this!
-     //Ê×ÏÈ¼ÆËãÆ«ÒÆÁ¿
+     //é¦–å…ˆè®¡ç®—åç§»é‡
     auto offset = FIXED_FIELD_LEN * col_id * num_rows_ + FIXED_FIELD_LEN * row_id;
 
-    //ÅĞ¶ÏÆ«ÒÆÁ¿ÊÇ·ñÔÚºÏ·¨·¶Î§ÄÚ
+    //åˆ¤æ–­åç§»é‡æ˜¯å¦åœ¨åˆæ³•èŒƒå›´å†…
     if (offset >= 0 && offset < FIXED_FIELD_LEN * num_rows_ * num_cols_) {
 
-        //Í¨¹ıÆ«ÒÆÁ¿»ñÈ¡¶ÔÓ¦int32_tÀàĞÍÊı¾İ²¢·µ»Ø
+        //é€šè¿‡åç§»é‡è·å–å¯¹åº”int32_tç±»å‹æ•°æ®å¹¶è¿”å›
         return *(int32_t*)(columns_ + offset);
     }
     return 0;
@@ -47,10 +47,10 @@ void CustomTable::PutIntField(int32_t row_id, int32_t col_id, int32_t field) {
   // TODO: Implement this!
     auto offset = FIXED_FIELD_LEN * col_id * num_rows_ + FIXED_FIELD_LEN * row_id;
     auto &cur_index = index_[col_id].index;
-    //ÅĞ¶ÏÆ«ÒÆÁ¿ÊÇ·ñÔÚºÏ·¨·¶Î§ÄÚ
+    //åˆ¤æ–­åç§»é‡æ˜¯å¦åœ¨åˆæ³•èŒƒå›´å†…
     if (offset >= 0 && offset < FIXED_FIELD_LEN * num_rows_ * num_cols_) {
 
-        //¶ÔË÷Òı½øĞĞĞŞ¸Ä
+        //å¯¹ç´¢å¼•è¿›è¡Œä¿®æ”¹
         cur_index[field].emplace_back(row_id);
         int32_t val = *(int32_t*)(columns_ + offset);
         std::vector<int32_t>& row_id_group = cur_index[val];
@@ -61,7 +61,7 @@ void CustomTable::PutIntField(int32_t row_id, int32_t col_id, int32_t field) {
             }
         }
 
-        //Í¨¹ıÆ«ÒÆÁ¿»ñÈ¡¶ÔÓ¦int32_tÀàĞÍµÄÊı¾İ²¢¸³ÖµÎªfield
+        //é€šè¿‡åç§»é‡è·å–å¯¹åº”int32_tç±»å‹çš„æ•°æ®å¹¶èµ‹å€¼ä¸ºfield
         *(int32_t*)(columns_ + offset) = field;
     }
 }
@@ -72,7 +72,7 @@ int64_t CustomTable::ColumnSum() {
 
     for (auto row_id = 0; row_id < num_rows_; row_id++) {
 
-        //col0ËùÔÚµØÖ·µÄÆ«ÒÆÁ¿
+        //col0æ‰€åœ¨åœ°å€çš„åç§»é‡
         auto offset = FIXED_FIELD_LEN * row_id;
         sum += *(int32_t*)(columns_ + offset);
     }
@@ -84,10 +84,10 @@ int64_t CustomTable::PredicatedColumnSum(int32_t threshold1, int32_t threshold2)
     int64_t sum = 0;
     int32_t col0 = 0, col1 = 1, col2 = 2;
     if (num_cols_ >= 3) {
-        //ÏÈÀûÓÃË÷Òı»ñÈ¡Âú×ãcol1>threshold1µÄrow_id
+        //å…ˆåˆ©ç”¨ç´¢å¼•è·å–æ»¡è¶³col1>threshold1çš„row_id
         std::vector<int32_t>row_id_group = index_[col1].GetGreaterRowId(threshold1);
 
-        //±éÀúvectorÒÀ´ÎÅĞ¶ÏÃ¿¸örow_idµÄcol2ÊÇ·ñÂú×ãÌõ¼ş£¬Âú×ãÔòÈ¡col0µÄÖµ¼ÓÈësum
+        //éå†vectorä¾æ¬¡åˆ¤æ–­æ¯ä¸ªrow_idçš„col2æ˜¯å¦æ»¡è¶³æ¡ä»¶ï¼Œæ»¡è¶³åˆ™å–col0çš„å€¼åŠ å…¥sum
         for (auto row_id : row_id_group) {
             auto offset_c2 = col2 * FIXED_FIELD_LEN*num_rows_+ row_id * FIXED_FIELD_LEN ;
             auto val_c2 = *(int32_t*)(columns_ + offset_c2);
@@ -106,7 +106,7 @@ int64_t CustomTable::PredicatedAllColumnsSum(int32_t threshold) {
     // TODO: Implement this!
     int64_t sum = 0;
     int32_t col0 = 0;
-    //ÀûÓÃË÷ÒıµÃ³öËùÓĞÂú×ãcol0>thresholdÌõ¼şµÄrow_id
+    //åˆ©ç”¨ç´¢å¼•å¾—å‡ºæ‰€æœ‰æ»¡è¶³col0>thresholdæ¡ä»¶çš„row_id
     std::vector<int32_t>row_id_group = index_[col0].GetGreaterRowId(threshold);
     for (auto row_id : row_id_group) {
         for (auto col_id = 0; col_id < num_cols_; col_id++) {
@@ -123,19 +123,19 @@ int64_t CustomTable::PredicatedUpdate(int32_t threshold) {
     int64_t update_rows = 0;
     int32_t col0 = 0, col2 = 2, col3 = 3;
 
-    //ÀûÓÃË÷Òı»ñÈ¡Âú×ãcol0<thresholdµÄËùÓĞrow_id
+    //åˆ©ç”¨ç´¢å¼•è·å–æ»¡è¶³col0<thresholdçš„æ‰€æœ‰row_id
     std::vector<int32_t>row_id_group = index_[col0].GetLessRowId(threshold);
     for (auto row_id:row_id_group) {
-        //Çócol2ºÍcol3µÄµØÖ·Æ«ÒÆÁ¿
+        //æ±‚col2å’Œcol3çš„åœ°å€åç§»é‡
         auto offset_c2 = FIXED_FIELD_LEN * (col2) * num_rows_ + FIXED_FIELD_LEN * row_id;
         auto offset_c3 = FIXED_FIELD_LEN * (col3) * num_rows_ + FIXED_FIELD_LEN * row_id;
 
-        //È¡³öcol2ºÍcol3µÄÖµ
+        //å–å‡ºcol2å’Œcol3çš„å€¼
         int32_t val_c2 = *(int32_t*)(columns_ + offset_c2);
         int32_t val_c3 = *(int32_t*)(columns_ + offset_c3);
         int32_t new_val = val_c2 + val_c3;
 
-        //ĞŞ¸Äcol3µÄÊı¾İ(col3 = col2+ col3)
+        //ä¿®æ”¹col3çš„æ•°æ®(col3 = col2+ col3)
         *(int32_t*)(columns_ + offset_c3) = new_val;
         index_[col3].index[new_val].emplace_back(row_id);
         auto& col3_row_id_group = index_[col3].index[val_c3];
@@ -146,7 +146,7 @@ int64_t CustomTable::PredicatedUpdate(int32_t threshold) {
             }
         }
 
-        //¸üĞÂ¹ıµÄĞĞÊı+1
+        //æ›´æ–°è¿‡çš„è¡Œæ•°+1
         ++update_rows;
     }
     return update_rows;
