@@ -2,7 +2,7 @@
 **注：运行sh configure.sh命令安装google test framework，若已安装先运行sh build.sh --clean --lab1 --lab2命令后运行cd build && ctest -VV -R "database_*" -j进行lab1和lab2test。**<br>
 ![](https://s3.bmp.ovh/imgs/2022/03/122d555393e56cb3.jpg)
 **阿里云双核2G ecs.t6-c1m1.large (性能约束实例)云服务器多次lab1与lab2测试，通过全部测试的时间多次出现为0.03s。**<br>
-**To Bytedance:视频讲解录制得比较早，在视频讲解之后代码有少部分改动过，如auto cur改为auto &cur导致开销明显减少，时间明显缩短**
+**To Bytedance:视频讲解录制得比较早，在视频讲解之后代码进行了一些细节上的修改，如auto cur改为auto &cur导致开销明显减少，性能明显提升**
 
 This is a project based on stanford cs245.
 
