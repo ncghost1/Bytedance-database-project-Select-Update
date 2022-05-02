@@ -4,7 +4,7 @@
 **阿里云双核2G ecs.t6-c1m1.large (性能约束实例)云服务器多次lab1与lab2测试，通过全部测试的时间多次出现为0.03s。**<br>
 **(To Bytedance:视频讲解录制得比较早，在视频讲解之后代码进行了一些细节上的修改，如auto cur_index改为auto &cur_index导致开销明显减少，性能明显提升)**<br>
 
-### 本项目已通过字节镜像计划2.0验收！
+### 本项目已通过字学镜像计划2.0验收！
 
 This is a project based on stanford cs245.
 
